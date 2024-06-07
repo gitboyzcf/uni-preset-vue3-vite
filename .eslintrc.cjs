@@ -2,43 +2,41 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true,
+    node: true
   },
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-essential',
     // eslint-plugin-import 插件， @see https://www.npmjs.com/package/eslint-plugin-import
     'plugin:import/recommended',
-    // eslint-config-airbnb-base 插件， tips: 本插件也可以替换成 eslint-config-standard
-    'airbnb-base',
+    // eslint-config-airbnb-base 插件 已经改用 eslint-config-standard 插件
+    'standard',
     // 1. 接入 prettier 的规则
     'prettier',
     'plugin:prettier/recommended',
-    'vue-global-api',
+    './.eslintrc-auto-import.json'
   ],
   overrides: [
     {
       env: {
-        node: true,
+        node: true
       },
       files: ['.eslintrc.{js}'],
       parserOptions: {
-        sourceType: 'script',
-      },
-    },
+        sourceType: 'script'
+      }
+    }
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
     parser: '@babel/eslint-parser',
-    sourceType: 'module',
+    requireConfigFile: false,
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
   plugins: [
-    '@babel/eslint-parser',
     'vue',
     // 2. 加入 prettier 的 eslint 插件
-    'prettier',
-    // eslint-import-resolver-typescript 插件，@see https://www.npmjs.com/package/eslint-import-resolver-typescript
-    'import',
+    'prettier'
   ],
   rules: {
     // 3. 注意要加上这一句，开启 prettier 自动修复的功能
@@ -49,8 +47,9 @@ module.exports = {
     'import/extensions': [
       'error',
       'ignorePackages',
-      { js: 'never', jsx: 'never', ts: 'never', tsx: 'never' },
+      { js: 'never', jsx: 'never', ts: 'never', tsx: 'never' }
     ],
+    // 只允许1个默认导出，关闭，否则不能随意export xxx
     // 只允许1个默认导出，关闭，否则不能随意export xxx
     'import/prefer-default-export': ['off'],
     'no-console': ['off'],
@@ -61,16 +60,22 @@ module.exports = {
     'no-plusplus': 'off',
     'no-shadow': 'off',
     'vue/multi-word-component-names': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
+    'no-underscore-dangle': 'off',
+    'no-use-before-define': 'off',
+    'no-undef': 'off',
+    'no-unused-vars': 'off',
+    'no-param-reassign': 'off',
+    'no-redeclare': 'off',
+    'import/named': 'off'
   },
   // eslint-import-resolver-typescript 插件，@see https://www.npmjs.com/package/eslint-import-resolver-typescript
   settings: {
     'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
+      '@babel/eslint-parser': ['.js', '.jsx']
     },
     'import/resolver': {
-      typescript: {},
-    },
+      node: {}
+    }
   },
   globals: {
     uni: true,
@@ -80,6 +85,6 @@ module.exports = {
     getCurrentPages: true,
     UniHelper: true,
     Page: true,
-    App: true,
-  },
+    App: true
+  }
 }
