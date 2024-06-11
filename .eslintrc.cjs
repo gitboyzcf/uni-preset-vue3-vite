@@ -50,7 +50,6 @@ module.exports = {
       { js: 'never', jsx: 'never', ts: 'never', tsx: 'never' }
     ],
     // 只允许1个默认导出，关闭，否则不能随意export xxx
-    // 只允许1个默认导出，关闭，否则不能随意export xxx
     'import/prefer-default-export': ['off'],
     'no-console': ['off'],
     // 'no-unused-vars': ['off'],
