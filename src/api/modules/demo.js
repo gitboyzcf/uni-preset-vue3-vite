@@ -6,7 +6,7 @@ import { request } from '../request'
 export default {
   API_DEMO_POST(data = {}) {
     return request({
-      url: 'demo/mock',
+      url: '/mock/user',
       method: 'post',
       data
     })
@@ -14,7 +14,7 @@ export default {
 
   API_DEMO_GET(params = {}) {
     return request({
-      url: '/demo/get',
+      url: '/posts',
       method: 'get',
       params
     })

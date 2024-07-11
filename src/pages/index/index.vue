@@ -7,6 +7,17 @@
     <view>
       <button type="primary" @click="useCountStore.count++">点击 {{ count }}</button>
     </view>
+    <view><button type="primary" @click="getList">点击请求数据</button></view>
+  </view>
+  <view class="p-2">
+    <view
+      class="my-15rpx b-b-solid b-b-1rpx b-b-color-[#cccccc]"
+      v-for="item in list"
+      :key="item.id"
+    >
+      <text class="text-18rpx font-bold">{{ item.title }}</text>
+      <view class="mt-4 text-12rpx color-[#9999]">{{ item.body }}</view>
+    </view>
   </view>
 </template>
 
@@ -16,13 +27,24 @@
   const title = ref('Hello World!')
   const count = computed(() => useCountStore.count)
 
-  const { API_DEMO_POST } = useRequest()
+  const { API_DEMO_GET } = useRequest()
 
-  onMounted(() => {
-    API_DEMO_POST().then(res => {
-      console.log(res);
+  const list = ref([])
+  const getList = () => {
+    uni.showLoading({
+      title: '加载中...'
     })
-  })
+    API_DEMO_GET()
+      .then((res) => {
+        console.log(res)
+        list.value = res
+        uni.hideLoading()
+      })
+      .catch(() => {
+        uni.hideLoading()
+      })
+  }
+  onMounted(() => {})
 </script>
 
 <style>
@@ -31,12 +53,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 20rpx 0;
   }
 
   .logo {
     height: 200rpx;
     width: 200rpx;
-    margin-top: 200rpx;
+    margin-top: 100rpx;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50rpx;

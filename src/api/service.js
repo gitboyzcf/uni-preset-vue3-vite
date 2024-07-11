@@ -17,7 +17,6 @@ export function createService() {
       const dataAxios = response.data
       // 这个状态码是和后端约定的
       const { code, data } = dataAxios
-      console.log(dataAxios)
       // 根据 code 进行判断
       if (code === undefined) {
         return dataAxios
