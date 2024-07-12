@@ -7,6 +7,10 @@
     <view>
       <button type="primary" @click="useCountStore.count++">点击 {{ count }}</button>
     </view>
+    <view
+      ><text class="i-ep-apple w-40rpx h-40rpx color-red"></text
+      ><text class="i-ep-alarm-clock w-40rpx h-40rpx"></text>
+    </view>
     <view><button type="primary" @click="getList">点击请求数据</button></view>
   </view>
   <view class="p-2">
@@ -22,7 +26,7 @@
 </template>
 
 <script setup>
-  import { useOutsideCountStore } from '@/store/count'
+  import { useOutsideCountStore } from '../../store/count'
   const useCountStore = useOutsideCountStore()
   const title = ref('Hello World!')
   const count = computed(() => useCountStore.count)

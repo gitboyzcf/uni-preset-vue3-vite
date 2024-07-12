@@ -77,6 +77,8 @@
     "@dcloudio/uni-cli-shared": "3.0.0-3090920231225001",
     "@dcloudio/uni-stacktracey": "3.0.0-3090920231225001",
     "@dcloudio/vite-plugin-uni": "3.0.0-3090920231225001",
+    "@iconify-json/ep": "^1.1.15",
+    "@uni-helper/vite-plugin-uni-manifest": "^0.2.6",
     "@unocss/preset-legacy-compat": "^0.59.4",
     "@unocss/preset-uno": "^0.59.4",
     "@vue/runtime-core": "^3.2.45",

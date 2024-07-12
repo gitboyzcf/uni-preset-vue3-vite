@@ -5,14 +5,14 @@ import {
   presetAttributify,
   presetIcons,
   transformerDirectives,
-  transformerVariantGroup,
+  transformerVariantGroup
 } from 'unocss'
 
 import {
   presetApplet,
   presetRemRpx,
   transformerApplet,
-  transformerAttributify,
+  transformerAttributify
 } from 'unocss-applet'
 
 import { presetUni } from '@uni-helper/unocss-preset-uni'
@@ -46,16 +46,16 @@ export default defineConfig({
       warn: true,
       extraProperties: {
         display: 'inline-block',
-        'vertical-align': 'middle',
-      },
+        'vertical-align': 'middle'
+      }
     }),
     // 将颜色函数 (rgb()和hsl()) 从空格分隔转换为逗号分隔，更好的兼容性app端，example：
     // `rgb(255 0 0)` -> `rgb(255, 0, 0)`
     // `rgba(255 0 0 / 0.5)` -> `rgba(255, 0, 0, 0.5)`
     presetLegacyCompat({
-      commaStyleColorFunction: true,
+      commaStyleColorFunction: true
     }),
-    presetUni(), // 解决 Windows 用户？告别烦人的崩溃
+    presetUni() // 解决 Windows 用户？告别烦人的崩溃
   ],
   /**
    * 自定义快捷语句
@@ -72,19 +72,19 @@ export default defineConfig({
     transformerAttributify({
       // 解决与第三方框架样式冲突问题
       prefixedOnly: true,
-      prefix: 'fg',
+      prefix: 'fg'
     }),
-    transformerApplet(),
+    transformerApplet()
   ],
   rules: [
     [
       'p-safe',
       {
         padding:
-          'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)',
-      },
+          'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)'
+      }
     ],
     ['pt-safe', { 'padding-top': 'env(safe-area-inset-top)' }],
-    ['pb-safe', { 'padding-bottom': 'env(safe-area-inset-bottom)' }],
-  ],
+    ['pb-safe', { 'padding-bottom': 'env(safe-area-inset-bottom)' }]
+  ]
 })

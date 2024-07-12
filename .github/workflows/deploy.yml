@@ -1,0 +1,55 @@
+# 工作流的名称，如果省略，则使用当前文件名
+name: Auto Deploy
+
+# 从工作流生成的工作流运行的名称，如果省略，则使用提交时的commit信息
+run-name: Deploy by @${{ github.actor }}
+
+# 触发部署的条件
+on:
+  # 每当 push 到 master 分支时触发部署
+  push:
+    branches:
+      - main
+
+# 当前流程要执行的任务，可以是多个。[my_first_job]就是一个任务
+jobs:
+  my_first_job:
+    name: build-and-deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6.32.9
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Cache dependencies
+        uses: actions/cache@v4
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run Build Script
+        run: pnpm run build
+
+      - name: Deploy to GitHub Pages
+        # 此actions的官方文档 https://github.com/JamesIves/github-pages-deploy-action
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          # 要部署的文件夹，必填
+          folder: dist/build/h5
+          # 希望部署的分支，默认gh-pages
+          branch: gh-pages
+          # # 仓库范围的访问令牌，可以将个人令牌的值存储在GitHub Secrets中
+          # # 默认情况是不需要填的，如果您需要更多权限，例如部署到另一个存储库才需要填写
+          # # ACCESS_TOKEN 对应GitHub Secrets中设置的字段，不要照搬
+          # TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          # # 部署到GitHub的不同仓库 <用户名>/<仓库名>
+          # # 此选项必须配置了TOKEN才能正常执行
+          # REPOSITORY-NAME: leoleor/leo2
