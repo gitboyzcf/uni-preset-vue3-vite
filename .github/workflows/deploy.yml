@@ -44,7 +44,7 @@ jobs:
           # # 仓库范围的访问令牌，可以将个人令牌的值存储在GitHub Secrets中
           # # 默认情况是不需要填的，如果您需要更多权限，例如部署到另一个存储库才需要填写
           # # ACCESS_TOKEN 对应GitHub Secrets中设置的字段，不要照搬
-          # TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           # # 部署到GitHub的不同仓库 <用户名>/<仓库名>
           # # 此选项必须配置了TOKEN才能正常执行
           # REPOSITORY-NAME: leoleor/leo2
