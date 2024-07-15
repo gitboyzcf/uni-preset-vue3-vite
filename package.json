@@ -61,10 +61,10 @@
     "@uni-helper/axios-adapter": "^1.5.2",
     "@uni-helper/unocss-preset-uni": "^0.2.8",
     "axios": "^1.6.8",
-    "pinia": "^2.0.32",
+    "pinia": "2.0.32",
     "pinia-plugin-persistedstate": "^3.2.1",
     "uni-preset-vue": "link:",
-    "vue": "^3.2.47",
+    "vue": "3.2.47",
     "vue-i18n": "^9.1.9"
   },
   "devDependencies": {
