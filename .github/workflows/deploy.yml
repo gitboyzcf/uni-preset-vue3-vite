@@ -31,7 +31,7 @@ jobs:
         run: pnpm install
 
       - name: Run Build Script
-        run: pnpm run build
+        run: pnpm run build:h5
 
       - name: Deploy to GitHub Pages
         # 此actions的官方文档 https://github.com/JamesIves/github-pages-deploy-action
