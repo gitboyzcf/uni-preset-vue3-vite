@@ -74,7 +74,7 @@
   "locale": "zh-Hans",
   "h5": {
     "router": {
-      "base": "/"
+      "base": "./"
     }
   }
 }
