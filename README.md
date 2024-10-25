@@ -1,6 +1,7 @@
 # UniApp、Vite、Vue3、Pinia、Unocss 小程序、H5 项目模板
+入门简单、开发简单、接近原生，适用于了解或不熟悉uniapp的开发人员去快速使用uniapp开发小程序、h5
 
-# 特色
+## 特色
 
 - ⚡️[uni-app](https://github.com/dcloudio/uni-app), [Vue 3](https://github.com/vuejs/core), [Vite](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/)
 
@@ -73,3 +74,7 @@ git add .
 
 pnpm run cz
 ```
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=gitboyzcf/uni-preset-vue3-vite&type=Timeline)](https://star-history.com/#gitboyzcf/uni-preset-vue3-vite&Timeline)
