@@ -20,11 +20,13 @@ export default ({ command, mode }) => {
     },
     plugins: [
       UniComponents({
+        dts: false,
         resolvers: [NutResolver()]
       }),
       UniManifest(),
       uni(),
       AutoImport({
+        dts: false,
         imports: [
           'vue',
           'uni-app',
