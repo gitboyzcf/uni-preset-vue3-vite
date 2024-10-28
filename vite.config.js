@@ -12,6 +12,11 @@ export default ({ command, mode }) => {
   const env = loadEnv(mode, path.resolve(process.cwd()))
   const { VITE_APP_API_BASEURL, VITE_APP_PROXY, VITE_APP_PROXY_PREFIX } = env
   return defineConfig({
+    build: {
+      watch: {
+        exclude: ['node_modules/**', '/__uno.css']
+      }
+    },
     resolve: {
       alias: {
         '@': path.join(process.cwd(), './src'),
