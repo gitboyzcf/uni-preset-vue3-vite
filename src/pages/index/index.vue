@@ -12,6 +12,7 @@
       ><text class="i-ep-alarm-clock w-40rpx h-40rpx"></text>
     </view>
     <view><button type="primary" @click="getList">点击请求数据</button></view>
+    <nut-countup :init-num="0" :end-num="200" :during="100"></nut-countup>
   </view>
   <view class="p-2">
     <view
@@ -51,7 +52,7 @@
   onMounted(() => {})
 </script>
 
-<style>
+<style lang="scss">
   .content {
     display: flex;
     flex-direction: column;

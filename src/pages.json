@@ -1,4 +1,12 @@
 {
+  "easycom": {
+		"autoscan": true,
+		"custom": {
+			// nutui 规则如下配置 https://nutui-uniapp.pages.dev/guide/quick-start.html
+      "^nut-(.*)?-(.*)": "nutui-uniapp/components/$1$2/$1$2.vue",
+      "^nut-(.*)": "nutui-uniapp/components/$1/$1.vue"
+		}
+	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
 			"path": "pages/index/index",

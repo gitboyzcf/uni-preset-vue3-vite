@@ -4,6 +4,8 @@ import uni from '@dcloudio/vite-plugin-uni'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
 import UniManifest from '@uni-helper/vite-plugin-uni-manifest'
+import UniComponents from '@uni-helper/vite-plugin-uni-components'
+import { NutResolver } from 'nutui-uniapp'
 
 // https://vitejs.dev/config/
 export default ({ command, mode }) => {
@@ -17,6 +19,9 @@ export default ({ command, mode }) => {
       }
     },
     plugins: [
+      UniComponents({
+        resolvers: [NutResolver()]
+      }),
       UniManifest(),
       uni(),
       AutoImport({
@@ -45,6 +50,13 @@ export default ({ command, mode }) => {
             }
           }
         : undefined
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@import "nutui-uniapp/styles/variables.scss";`
+        }
+      }
     }
   })
 }
