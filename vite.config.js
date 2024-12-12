@@ -3,7 +3,9 @@ import path from 'node:path'
 import uni from '@dcloudio/vite-plugin-uni'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
+// https://github.com/uni-helper
 import UniManifest from '@uni-helper/vite-plugin-uni-manifest'
+import UniLayouts from '@uni-helper/vite-plugin-uni-layouts'
 import UniComponents from '@uni-helper/vite-plugin-uni-components'
 import { NutResolver } from 'nutui-uniapp'
 
@@ -28,6 +30,7 @@ export default ({ command, mode }) => {
         dts: false,
         resolvers: [NutResolver()]
       }),
+      UniLayouts(),
       UniManifest(),
       uni(),
       AutoImport({

@@ -80,6 +80,7 @@
     "@dcloudio/vite-plugin-uni": "3.0.0-3090920231225001",
     "@iconify-json/ep": "^1.1.15",
     "@uni-helper/vite-plugin-uni-components": "^0.1.0",
+    "@uni-helper/vite-plugin-uni-layouts": "^0.1.10",
     "@uni-helper/vite-plugin-uni-manifest": "^0.2.6",
     "@unocss/preset-legacy-compat": "^0.59.4",
     "@unocss/preset-uno": "^0.59.4",

@@ -2,7 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true
+    node: true,
   },
   extends: [
     'eslint:recommended',
@@ -14,29 +14,23 @@ module.exports = {
     // 1. 接入 prettier 的规则
     'prettier',
     'plugin:prettier/recommended',
-    './.eslintrc-auto-import.json'
   ],
   overrides: [
     {
       env: {
-        node: true
+        node: true,
       },
-      files: ['.eslintrc.{js}'],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: 'script'
-      }
-    }
+        sourceType: 'script',
+      },
+    },
   ],
-  parserOptions: {
-    parser: '@babel/eslint-parser',
-    requireConfigFile: false,
-    ecmaVersion: 'latest',
-    sourceType: 'module'
-  },
+
   plugins: [
     'vue',
     // 2. 加入 prettier 的 eslint 插件
-    'prettier'
+    'prettier',
   ],
   rules: {
     // 3. 注意要加上这一句，开启 prettier 自动修复的功能
@@ -44,17 +38,12 @@ module.exports = {
     // turn on errors for missing imports
     'import/no-unresolved': 'off',
     // 对后缀的检测，否则 import 一个ts文件也会报错，需要手动添加'.ts', 增加了下面的配置后就不用了
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      { js: 'never', jsx: 'never', ts: 'never', tsx: 'never' }
-    ],
+    'import/extensions': 'off',
     // 只允许1个默认导出，关闭，否则不能随意export xxx
     'import/prefer-default-export': ['off'],
     'no-console': ['off'],
     // 'no-unused-vars': ['off'],
-    // '@typescript-eslint/no-unused-vars': ['off'],
-    // 解决vite.config.ts报错问题
+    // 解决vite.config.js报错问题
     'import/no-extraneous-dependencies': 'off',
     'no-plusplus': 'off',
     'no-shadow': 'off',
@@ -64,19 +53,9 @@ module.exports = {
     'no-undef': 'off',
     'no-unused-vars': 'off',
     'no-param-reassign': 'off',
-    'no-redeclare': 'off',
-    'import/named': 'off'
-  },
-  // eslint-import-resolver-typescript 插件，@see https://www.npmjs.com/package/eslint-import-resolver-typescript
-  settings: {
-    'import/parsers': {
-      '@babel/eslint-parser': ['.js', '.jsx']
-    },
-    'import/resolver': {
-      node: {}
-    }
   },
   globals: {
+    $t: true,
     uni: true,
     UniApp: true,
     wx: true,
@@ -84,6 +63,7 @@ module.exports = {
     getCurrentPages: true,
     UniHelper: true,
     Page: true,
-    App: true
-  }
+    App: true,
+    NodeJS: true,
+  },
 }

@@ -1,24 +1,54 @@
 {
   "easycom": {
-		"autoscan": true,
-		"custom": {
-			// nutui 规则如下配置 https://nutui-uniapp.pages.dev/guide/quick-start.html
+    "autoscan": true,
+    "custom": {
       "^nut-(.*)?-(.*)": "nutui-uniapp/components/$1$2/$1$2.vue",
       "^nut-(.*)": "nutui-uniapp/components/$1/$1.vue"
-		}
-	},
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	}
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "type": "home",
+      "layout": "default",
+      "style": {
+        "navigationBarTitleText": "uni-app"
+      }
+    },
+    {
+      "path": "pages/interaction/interaction",
+      "type": "page",
+      "layout": "default",
+      "style": {
+        "navigationBarTitleText": "互动"
+      }
+    }
+  ],
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/images/index_i_no.png",
+        "selectedIconPath": "static/images/index_i_yes.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/interaction/interaction",
+        "iconPath": "static/images/interaction_i_no.png",
+        "selectedIconPath": "static/images/interaction_i_yes.png",
+        "text": "互动"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "subPackages": []
 }

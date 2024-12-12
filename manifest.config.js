@@ -1,4 +1,4 @@
-// manifest.config.ts
+// manifest.config.js
 import { defineManifestConfig } from '@uni-helper/vite-plugin-uni-manifest'
 import path from 'node:path'
 import { loadEnv } from 'vite'
