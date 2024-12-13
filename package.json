@@ -107,7 +107,7 @@
     "unocss": "^0.58.9",
     "unocss-applet": "^0.7.8",
     "unplugin-auto-import": "^0.17.5",
-    "vite": "4.3.5",
+    "vite": "4.5.3",
     "vue-global-api": "^0.4.1"
   },
   "lint-staged": {
