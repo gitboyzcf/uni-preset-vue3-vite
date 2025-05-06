@@ -64,7 +64,10 @@ export default ({ command, mode }) => {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@import "nutui-uniapp/styles/variables.scss";`
+          additionalData: `@import "nutui-uniapp/styles/variables.scss";`,
+          api: 'modern-compiler',
+          //忽略警告提示
+          silenceDeprecations: ['legacy-js-api', 'import']
         }
       }
     }

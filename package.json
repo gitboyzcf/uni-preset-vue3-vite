@@ -44,20 +44,22 @@
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
-    "@dcloudio/uni-app": "3.0.0-3090920231225001",
-    "@dcloudio/uni-app-plus": "3.0.0-3090920231225001",
-    "@dcloudio/uni-components": "3.0.0-3090920231225001",
-    "@dcloudio/uni-h5": "3.0.0-3090920231225001",
-    "@dcloudio/uni-mp-alipay": "3.0.0-3090920231225001",
-    "@dcloudio/uni-mp-baidu": "3.0.0-3090920231225001",
-    "@dcloudio/uni-mp-jd": "3.0.0-3090920231225001",
-    "@dcloudio/uni-mp-kuaishou": "3.0.0-3090920231225001",
-    "@dcloudio/uni-mp-lark": "3.0.0-3090920231225001",
-    "@dcloudio/uni-mp-qq": "3.0.0-3090920231225001",
-    "@dcloudio/uni-mp-toutiao": "3.0.0-3090920231225001",
-    "@dcloudio/uni-mp-weixin": "3.0.0-3090920231225001",
-    "@dcloudio/uni-mp-xhs": "3.0.0-3090920231225001",
-    "@dcloudio/uni-quickapp-webview": "3.0.0-3090920231225001",
+    "@dcloudio/uni-app": "3.0.0-4060420250429001",
+    "@dcloudio/uni-app-harmony": "3.0.0-4060420250429001",
+    "@dcloudio/uni-app-plus": "3.0.0-4060420250429001",
+    "@dcloudio/uni-components": "3.0.0-4060420250429001",
+    "@dcloudio/uni-h5": "3.0.0-4060420250429001",
+    "@dcloudio/uni-mp-alipay": "3.0.0-4060420250429001",
+    "@dcloudio/uni-mp-baidu": "3.0.0-4060420250429001",
+    "@dcloudio/uni-mp-harmony": "3.0.0-4060420250429001",
+    "@dcloudio/uni-mp-jd": "3.0.0-4060420250429001",
+    "@dcloudio/uni-mp-kuaishou": "3.0.0-4060420250429001",
+    "@dcloudio/uni-mp-lark": "3.0.0-4060420250429001",
+    "@dcloudio/uni-mp-qq": "3.0.0-4060420250429001",
+    "@dcloudio/uni-mp-toutiao": "3.0.0-4060420250429001",
+    "@dcloudio/uni-mp-weixin": "3.0.0-4060420250429001",
+    "@dcloudio/uni-mp-xhs": "3.0.0-4060420250429001",
+    "@dcloudio/uni-quickapp-webview": "3.0.0-4060420250429001",
     "@uni-helper/axios-adapter": "^1.5.2",
     "@uni-helper/unocss-preset-uni": "^0.2.8",
     "axios": "^1.6.8",
@@ -65,26 +67,26 @@
     "pinia": "2.0.32",
     "pinia-plugin-persistedstate": "^3.2.1",
     "uni-preset-vue": "link:",
-    "vue": "3.2.47",
-    "vue-i18n": "^9.1.9"
+    "vue": "3.5.13",
+    "vue-i18n": "^9.14.4"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
     "@babel/eslint-parser": "^7.24.7",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@dcloudio/types": "^3.3.2",
-    "@dcloudio/uni-automator": "3.0.0-3090920231225001",
-    "@dcloudio/uni-cli-shared": "3.0.0-3090920231225001",
-    "@dcloudio/uni-stacktracey": "3.0.0-3090920231225001",
-    "@dcloudio/vite-plugin-uni": "3.0.0-3090920231225001",
+    "@dcloudio/types": "^3.4.15",
+    "@dcloudio/uni-automator": "3.0.0-4060420250429001",
+    "@dcloudio/uni-cli-shared": "3.0.0-4060420250429001",
+    "@dcloudio/uni-stacktracey": "3.0.0-4060420250429001",
+    "@dcloudio/vite-plugin-uni": "3.0.0-4060420250429001",
     "@iconify-json/ep": "^1.1.15",
     "@uni-helper/vite-plugin-uni-components": "^0.1.0",
     "@uni-helper/vite-plugin-uni-layouts": "^0.1.10",
     "@uni-helper/vite-plugin-uni-manifest": "^0.2.6",
     "@unocss/preset-legacy-compat": "^0.59.4",
     "@unocss/preset-uno": "^0.59.4",
-    "@vue/runtime-core": "^3.2.45",
+    "@vue/runtime-core": "^3.5.13",
     "commitizen": "^4.3.0",
     "commitlint": "^19.3.0",
     "cz-customizable": "^7.0.0",
@@ -107,7 +109,7 @@
     "unocss": "^0.58.9",
     "unocss-applet": "^0.7.8",
     "unplugin-auto-import": "^0.17.5",
-    "vite": "4.5.3",
+    "vite": "5.2.8",
     "vue-global-api": "^0.4.1"
   },
   "lint-staged": {
@@ -120,5 +122,6 @@
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
-  }
+  },
+  "packageManager": "pnpm@10.1.0+sha1.ab7948c89104fdd3fc88b5b391fa4b73fd800631"
 }
