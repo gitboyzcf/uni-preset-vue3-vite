@@ -12,7 +12,14 @@
       ><text class="i-ep-alarm-clock w-40rpx h-40rpx"></text>
     </view>
     <view><button type="primary" @click="getList">点击请求数据</button></view>
-    <nut-countup :init-num="0" :end-num="200" :during="100"></nut-countup>
+    <wd-icon name="add-circle" />
+    <wd-icon name="delete" size="22px" color="red"></wd-icon>
+    <wd-count-to :endVal="200" color="#16baaa"></wd-count-to>
+    <wd-button>主要按钮</wd-button>
+    <wd-button type="success">成功按钮</wd-button>
+    <wd-button type="info">信息按钮</wd-button>
+    <wd-button type="warning">警告按钮</wd-button>
+    <wd-button type="error">危险按钮</wd-button>
   </view>
   <view class="p-2">
     <view
@@ -27,7 +34,6 @@
 </template>
 
 <script setup>
-  import { useOutsideCountStore } from '../../store/count'
   const useCountStore = useOutsideCountStore()
   const title = ref('Hello World!')
   const count = computed(() => useCountStore.count)

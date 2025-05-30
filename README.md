@@ -1,6 +1,6 @@
 # UniApp、Vite、Vue3、Pinia、Unocss 小程序、H5 项目模板
 
-入门简单、开发简单、接近原生，适用于了解或不熟悉uniapp的开发人员去快速使用uniapp开发小程序、h5
+入门简单、开发简单、接近原生，适用于了解或不熟悉uniapp的开发人员去快速使用uniapp开发小程序、H5
 
 ## 特色
 
@@ -8,7 +8,11 @@
 
 - 📦 [组件自动化引入](https://github.com/antfu/unplugin-vue-components)
 
+- 🛣 类 VueRouter 路由: 使用 [uniapp-router-next](https://www.npmjs.com/package/uniapp-router-next) 并进行了增强，如拦截器、中间件和路由别名，提供熟悉的 API 体验。
+
 - 🍍 [使用 Pinia 的状态管理](https://pinia.vuejs.org)
+
+- 👇 内置 Z-Paging: 集成了高性能、易用的下拉分页组件，轻松实现下拉刷新和上拉加载更多等功能。
 
 - 🎨 [UnoCSS](https://github.com/unocss/unocss) - 高性能且极具灵活性的即时原子化 CSS 引擎
 

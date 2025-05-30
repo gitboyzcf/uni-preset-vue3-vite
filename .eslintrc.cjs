@@ -1,8 +1,9 @@
+const autoImport = require('./.eslintrc-auto-import.json')
 module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true,
+    node: true
   },
   extends: [
     'eslint:recommended',
@@ -13,24 +14,24 @@ module.exports = {
     'standard',
     // 1. 接入 prettier 的规则
     'prettier',
-    'plugin:prettier/recommended',
+    'plugin:prettier/recommended'
   ],
   overrides: [
     {
       env: {
-        node: true,
+        node: true
       },
       files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: 'script',
-      },
-    },
+        sourceType: 'script'
+      }
+    }
   ],
 
   plugins: [
     'vue',
     // 2. 加入 prettier 的 eslint 插件
-    'prettier',
+    'prettier'
   ],
   rules: {
     // 3. 注意要加上这一句，开启 prettier 自动修复的功能
@@ -52,7 +53,7 @@ module.exports = {
     'no-use-before-define': 'off',
     'no-undef': 'off',
     'no-unused-vars': 'off',
-    'no-param-reassign': 'off',
+    'no-param-reassign': 'off'
   },
   globals: {
     $t: true,
@@ -65,5 +66,6 @@ module.exports = {
     Page: true,
     App: true,
     NodeJS: true,
-  },
+    ...autoImport.globals
+  }
 }
