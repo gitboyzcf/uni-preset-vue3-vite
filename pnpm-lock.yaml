@@ -120,6 +120,9 @@ importers:
       '@dcloudio/vite-plugin-uni':
         specifier: 3.0.0-4060420250429001
         version: 3.0.0-4060420250429001(postcss@8.5.3)(rollup@4.40.1)(vite@5.2.8(@types/node@20.17.40)(sass@1.77.8)(terser@5.39.0))(vue@3.5.13(typescript@5.8.3))
+      '@iconify-json/carbon':
+        specifier: ^1.2.8
+        version: 1.2.8
       '@iconify-json/ep':
         specifier: ^1.1.15
         version: 1.2.2
@@ -1358,6 +1361,9 @@ packages:
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     deprecated: Use @eslint/object-schema instead
+
+  '@iconify-json/carbon@1.2.8':
+    resolution: {integrity: sha512-6xh4YiFBz6qoSnB3XMe23WvjTJroDFXB17J1MbiT7nATFe+70+em1acRXr8hgP/gYpwFMHFc4IvjA/IPTPnTzg==}
 
   '@iconify-json/ep@1.2.2':
     resolution: {integrity: sha512-/IH1GjQKH5uK7lQAOjwPxdjkU98OWUWnHYCdg/EkeebBKEteotaOMeEz5pR1egqMcI7zPFdFBTcGyCHla1ddQw==}
@@ -7787,6 +7793,10 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/object-schema@2.0.3': {}
+
+  '@iconify-json/carbon@1.2.8':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/ep@1.2.2':
     dependencies:

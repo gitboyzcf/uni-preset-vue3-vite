@@ -1,6 +1,7 @@
 <template>
   <view>
     <view class="p-4">
+      <!-- 富文本解析 -->
       <uv-parse :content="agreement"></uv-parse>
     </view>
   </view>

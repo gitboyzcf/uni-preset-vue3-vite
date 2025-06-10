@@ -43,44 +43,49 @@
     window.open(userInfo.value.url)
   }
 
-  async function handleLogout() {
-    const result = uni.showModal({
+  function handleLogout() {
+    uni.showModal({
       title: '提示',
       content: '确定要退出登录吗?',
       showCancel: true,
       confirmText: '确定',
-      cancelText: '取消'
+      cancelText: '取消',
+      success: async function (res) {
+        if (res.confirm) {
+          await userStore.logout()
+          uni.showToast({
+            title: '退出登录成功',
+            icon: 'success'
+          })
+          setTimeout(() => {
+            router.replace({
+              name: '/user'
+            })
+          }, 500)
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
     })
-
-    if (result.confirm) {
-      await userStore.logout()
-
-      uni.showToast({
-        title: '退出登录成功',
-        icon: 'success'
-      })
-
-      await sleep()
-
-      router.push({
-        path: '/login'
-      })
-    }
   }
 </script>
 
 <template>
   <view class="h-full flex flex-col">
     <view class="relative overflow-hidden">
-      <view class="absolute inset-0 bg-primary-500"></view>
+      <view class="absolute inset-0 bg-blue-500"></view>
 
-      <view class="absolute h-42 w-42 rounded-full bg-white opacity-10 -right-10 -top-10"></view>
-      <view class="absolute bottom-0 right-20 h-20 w-20 rounded-full bg-white opacity-10"></view>
+      <view
+        class="absolute h-42 w-42 rounded-full bg-white opacity-10 -right-10 -top-10 z-1"
+      ></view>
+      <view
+        class="absolute bottom-0 right-20 h-20 w-20 rounded-full bg-white opacity-10 z-1"
+      ></view>
 
       <view class="h-[--safe-top]"></view>
 
       <view
-        class="relative flex items-center px-6 pb-12 pt-12 bg-blue"
+        class="relative flex items-center px-6 pb-12 pt-12 bg-blue-500"
         hover-class="opacity-90"
         @click="handleLogin"
       >
@@ -115,7 +120,7 @@
         @click="handleMenuItemClick(item)"
       >
         <view class="w-10 flex flex-none items-center justify-center text-gray-500">
-          <view class="size-6 text-primary-500" :class="item.icon"></view>
+          <view class="size-6 text-blue-500" :class="item.icon"></view>
         </view>
 
         <view class="flex-1 text-gray-700 font-medium">
@@ -140,7 +145,7 @@
     <view v-else class="mb-6 mt-auto text-center text-xs text-gray-400">
       <view>
         Supported by
-        <text class="text-primary-500 underline active:text-primary-700" @click="onEnterpriseClick">
+        <text class="text-blue-500 underline active:text-blue-700" @click="onEnterpriseClick">
           {{ userInfo.name }}
         </text>
         v{{ version }}

@@ -6,13 +6,22 @@ export const useUserStore = defineStore('user', {
   }),
   actions: {
     async login() {
-      // 模拟异步请求服务器获取 token
-      setTimeout(() => {
-        this.token = '123456789'
-      }, 2000)
+      return new Promise((resolve) => {
+        // 模拟异步请求服务器获取 token
+        setTimeout(() => {
+          this.token = '123456789'
+          resolve()
+        }, 2000)
+      })
     },
     logout() {
-      this.token = ''
+      return new Promise((resolve) => {
+        // 模拟异步请求
+        setTimeout(() => {
+          this.token = ''
+          resolve()
+        }, 1000)
+      })
     },
     async getUserInfo() {
       // 模拟异步请求服务器获取用户信息

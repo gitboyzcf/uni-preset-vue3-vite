@@ -18,8 +18,13 @@ export default defineConfig({
         'vertical-align': 'middle'
       }
     }),
-    // 支持css class属性化
-    presetAttributify()
+    // 支持css class属性化, 可能会与ui的组件属性冲突
+    presetAttributify({
+      ignoreAttributes: [
+        'color'
+        // ...
+      ]
+    })
   ],
   transformers: [
     // 启用指令功能：主要用于支持 @apply、@screen 和 theme() 等 CSS 指令

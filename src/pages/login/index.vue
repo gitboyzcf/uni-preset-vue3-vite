@@ -1,8 +1,10 @@
 <script setup>
   // import { description, version } from '@root/package.json'
   import Agreement from './components/agreement.vue'
+  import { useMessage } from 'wot-design-uni'
   const userStore = useUserStore()
   const router = useRouter()
+  const message = useMessage('wd-message-box-slot')
 
   const agreed = ref(false)
   const isLoading = ref(false)
@@ -28,10 +30,11 @@
         title: '登录成功',
         icon: 'success'
       })
-
-      router.pushTab({
-        path: '/pages/index/index'
-      })
+      setTimeout(async () => {
+        router.pushTab({
+          path: '/pages/index/index'
+        })
+      }, 500)
     } catch (error) {
       uni.showToast({
         title: '登录失败，请重试',
@@ -48,6 +51,16 @@
 
   function onAgreementClick() {
     agreementVisible.value = true
+    console.log(message)
+
+    message.alert({
+      title: '《产品服务协议》'
+    })
+    // uni.showModal({
+    // title: '提示',
+    //  content: '触发了路由中间件，是否允许通过?',
+    //  success: (res) => {}
+    // })
   }
 </script>
 
@@ -134,19 +147,19 @@
 
           <view class="flex items-center justify-center text-xs text-gray-400 space-x-2">
             <view class="i-carbon-information h-3 w-3"></view>
-            <!-- <text>版本 v{{ version }}</text> -->
+            <text>版本 v1.0.0</text>
           </view>
         </view>
       </view>
     </view>
   </view>
   <!-- demo 基础用法 -->
-  <!-- <nut-action-sheet v-model:visible="agreementVisible">
+  <wd-message-box selector="wd-message-box-slot">
     <Agreement />
-  </nut-action-sheet> -->
+  </wd-message-box>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   @keyframes float {
     0%,
     100% {

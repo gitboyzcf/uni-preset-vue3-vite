@@ -12,7 +12,7 @@
 
 - 🍍 [使用 Pinia 的状态管理](https://pinia.vuejs.org)
 
-- 👇 内置 Z-Paging: 集成了高性能、易用的下拉分页组件，轻松实现下拉刷新和上拉加载更多等功能。
+- 👇 内置 [Z-Paging](https://github.com/SmileZXLee/uni-z-paging): 集成了高性能、易用的下拉分页组件，轻松实现下拉刷新和上拉加载更多等功能。
 
 - 🎨 [UnoCSS](https://github.com/unocss/unocss) - 高性能且极具灵活性的即时原子化 CSS 引擎
 

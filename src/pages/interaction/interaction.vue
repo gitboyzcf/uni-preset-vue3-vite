@@ -1,5 +1,5 @@
 <template>
-  <view class="interaction h-full">
+  <view class="interaction h-full overflow-hidden">
     <wd-tabs v-model="state.tab11value">
       <!-- #ifdef H5 -->
       <wd-tab title="Wot UI" class="h-full important-p-0">
