@@ -1,34 +1,8 @@
 <script setup>
   import wechatImage from '@/static/images/contact/image-wechat.png?url'
 
-  const userStore = useUserStore()
+  const userStore = useOutsideUserStore()
   const userInfo = computed(() => userStore.userInfo)
-  const router = useRouter()
-
-  // 添加中间件拦截 (只有路由对象中 携带test的路由会走此部分)
-  // /src/router/helper.js
-  // defineMiddleware(
-  //   'test',
-  //   function (router) {
-  //     router.beforeEach((to, from, next) => {
-  //       uni.showModal({
-  //         title: '提示',
-  //         content: '触发了路由中间件，是否允许通过?',
-  //         success: (res) => {
-  //           if (res.cancel) {
-  //             next(false)
-  //           } else {
-  //             next()
-  //           }
-  //         }
-  //       })
-  //     })
-
-  //     router.afterEach(() => {})
-  //   },
-  //   { router }
-  // )
-
   // 复制文本到剪贴板
   function handleCopy(text) {
     uni.setClipboardData({
@@ -51,7 +25,6 @@
 
   // 预览图片
   function previewImage(url) {
-    console.log('previewImage', url)
     uni.previewImage({
       urls: [url],
       current: url

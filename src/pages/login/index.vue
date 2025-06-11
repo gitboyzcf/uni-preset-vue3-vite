@@ -2,7 +2,7 @@
   // import { description, version } from '@root/package.json'
   import Agreement from './components/agreement.vue'
   import { useMessage } from 'wot-design-uni'
-  const userStore = useUserStore()
+  const userStore = useOutsideUserStore()
   const router = useRouter()
   const message = useMessage('wd-message-box-slot')
 
@@ -51,8 +51,6 @@
 
   function onAgreementClick() {
     agreementVisible.value = true
-    console.log(message)
-
     message.alert({
       title: '《产品服务协议》'
     })

@@ -9,6 +9,7 @@ export const useUserStore = defineStore('user', {
       return new Promise((resolve) => {
         // 模拟异步请求服务器获取 token
         setTimeout(() => {
+          this.getUserInfo()
           this.token = '123456789'
           resolve()
         }, 2000)

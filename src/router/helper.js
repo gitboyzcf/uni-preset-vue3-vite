@@ -12,7 +12,7 @@ export function addRouterMethodAlias(router) {
   Object.assign(router, {
     push: (...args) => router.navigate(...args),
     pushTab: (...args) => router.switchTab(...args),
-    replace: (...args) => router.redirect(...args),
+    replace: (...args) => router.redirectTo(...args),
     replaceAll: (...args) => router.reLaunch(...args),
     back: (options) => {
       router.navigateBack({ ...(options || {}), delta: options?.delta || options })

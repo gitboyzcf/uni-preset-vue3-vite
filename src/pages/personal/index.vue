@@ -1,8 +1,7 @@
 <script setup>
   // const router = useRouter()
 
-  const userStore = useUserStore()
-
+  const userStore = useOutsideUserStore()
   const userInfo = computed(() => userStore.userInfo)
 
   const genderText = computed(() => {

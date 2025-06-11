@@ -1,6 +1,6 @@
 <script setup>
   const version = '1.0.0'
-  const userStore = useUserStore()
+  const userStore = useOutsideUserStore()
   const router = useRouter()
 
   const isLogin = computed(() => !!userStore.token)
@@ -20,6 +20,10 @@
   ])
 
   function handleMenuItemClick(item) {
+    if (item.path === '/settings') {
+      uni.showToast({ title: '系统设置功能暂未开放', icon: 'none' })
+      return
+    }
     router.push({
       path: item.path,
       query: item.query || {}
@@ -59,7 +63,7 @@
           })
           setTimeout(() => {
             router.replace({
-              name: '/user'
+              path: '/user'
             })
           }, 500)
         } else if (res.cancel) {
@@ -114,8 +118,8 @@
       <view
         v-for="(item, index) of systemItems"
         :key="index"
-        class="flex items-center bg-white px-5 py-4 transition-colors duration-200 active:bg-gray-50"
         :class="[index !== systemItems.length - 1 ? 'border-b border-gray-100' : '']"
+        class="flex items-center bg-white px-5 py-4 transition-colors duration-200 active:bg-gray-50"
         hover-class="bg-gray-50"
         @click="handleMenuItemClick(item)"
       >

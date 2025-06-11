@@ -1,8 +1,7 @@
 import { createRouter } from './helper'
+import { testMiddleware } from './middleware'
 
 import routes from 'uni-router-routes'
-
-// import permission from '@/permission/index.js'
 
 const router = createRouter({
   routes: [
@@ -19,7 +18,8 @@ const router = createRouter({
   ]
 })
 
-// permission(router)
+// 路由守卫中页面跳转不支持路径别名，请使用实际路径，避免使用别名
+testMiddleware(router)
 
 async function setupRouter(app) {
   app.use(router)
