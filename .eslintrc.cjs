@@ -16,6 +16,7 @@ module.exports = {
     'prettier',
     'plugin:prettier/recommended'
   ],
+  ignorePatterns: ['**/uni_modules/**', '**/node_modules/**', '**/dist/**'],
   overrides: [
     {
       env: {

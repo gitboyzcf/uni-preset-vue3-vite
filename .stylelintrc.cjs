@@ -41,5 +41,6 @@ module.exports = {
       }
     ],
     'comment-empty-line-before': 'never'
-  }
+  },
+  ignoreFiles: ["node_modules/**/*", "src/uni_modules/**/*"],
 }
