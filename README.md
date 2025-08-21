@@ -2,6 +2,18 @@
 
 入门简单、开发简单、接近原生，适用于了解或不熟悉uniapp的开发人员去快速使用uniapp开发小程序、H5
 
+## 平台兼容性
+
+| H5  | IOS | 安卓 | 微信小程序 | 字节小程序 | 快手小程序 | 支付宝小程序 | 钉钉小程序 | 百度小程序 |
+| --- | --- | ---- | ---------- | ---------- | ---------- | ------------ | ---------- | ---------- |
+| √   |  √  |   √  |      √     |           |           |             |           |          |
+
+## 环境
+
+- node>=18
+- pnpm>=7.30
+- Vue Official>=2.1.10
+
 ## 特色
 
 - ⚡️[uni-app](https://github.com/dcloudio/uni-app), [Vue 3](https://github.com/vuejs/core), [Vite](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/)

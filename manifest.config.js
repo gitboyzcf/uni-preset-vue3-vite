@@ -10,9 +10,9 @@ const { VITE_APP_TITLE, VITE_UNI_APPID, VITE_WX_APPID, VITE_APP_PUBLIC_BASE } = 
 export default defineManifestConfig({
   name: VITE_APP_TITLE,
   appid: VITE_UNI_APPID,
-  description: '',
+  description: '模板app测试',
   versionName: '1.0.0',
-  versionCode: '100',
+  versionCode: '2025062101',
   transformPx: false,
   locale: 'zh-Hans',
   h5: {
@@ -64,7 +64,39 @@ export default defineManifestConfig({
       /* ios打包配置 */
       ios: {},
       /* SDK配置 */
-      sdkConfigs: {}
+      sdkConfigs: {},
+      icons: {
+        android: {
+          hdpi: 'src/static/app/icons/72x72.png',
+          xhdpi: 'src/static/app/icons/96x96.png',
+          xxhdpi: 'src/static/app/icons/144x144.png',
+          xxxhdpi: 'src/static/app/icons/192x192.png'
+        },
+        ios: {
+          iphone: {
+            'app@2x': 'src/static/app/icons/120x120.png',
+            'app@3x': 'src/static/app/icons/180x180.png',
+            'spotlight@2x': 'src/static/app/icons/80x80.png',
+            'spotlight@3x': 'src/static/app/icons/120x120.png',
+            'settings@2x': 'src/static/app/icons/58x58.png',
+            'settings@3x': 'src/static/app/icons/87x87.png',
+            'notification@2x': 'src/static/app/icons/40x40.png',
+            'notification@3x': 'src/static/app/icons/60x60.png'
+          },
+          ipad: {
+            app: 'src/static/app/icons/76x76.png',
+            'app@2x': 'src/static/app/icons/152x152.png',
+            'proapp@2x': 'src/static/app/icons/167x167.png',
+            spotlight: 'src/static/app/icons/40x40.png',
+            'spotlight@2x': 'src/static/app/icons/80x80.png',
+            settings: 'src/static/app/icons/29x29.png',
+            'settings@2x': 'src/static/app/icons/58x58.png',
+            notification: 'src/static/app/icons/20x20.png',
+            'notification@2x': 'src/static/app/icons/40x40.png'
+          },
+          appstore: 'src/static/app/icons/1024x1024.png'
+        }
+      }
     }
   },
   /* 快应用特有相关 */
